@@ -16,6 +16,7 @@
 1. `git pull` で変更を取り込んでおく．
 1. `git checkout -b [ブランチ名] master` で新しいブランチを作る．名前は Issue の番号 (#XXX) を使って `issue/XXX` などでよい．
 1. ファイルを直接操作して実際の作業をする．
+1. `git add [ファイル名]` で変更したファイルを追加する．
 1. `git commit -m "[作業内容]"` でメッセージをつけて作業をコミットという単位にまとめる． (1 つの作業で複数回コミットしてもいい)
 1. `git push -u origin [ブランチ名]` で GitHub にコミットをアップロードする．
 1. [ここ](https://github.com/Siketyan/Confusion-Flick/compare) で base を master ， compare を先程のブランチ名にして，プルリクエストを作成する．
