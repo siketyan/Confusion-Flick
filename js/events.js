@@ -1,3 +1,3 @@
 $("#page-move").click(function(){
-	pageLoad(.data('page'));
+	pageLoad($(this).data('page'));
 	})
