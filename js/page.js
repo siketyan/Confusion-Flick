@@ -1,3 +1,3 @@
 function pageLoad(name) {
-    $('#page - container').load(page+'.html');
+    $('#page-container').load(page+'.html');
 }
