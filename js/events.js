@@ -8,6 +8,6 @@ function registerEvents() {
 		    x : event.changedTouches[0].pageX,
 		    y : event.changedTouches[0].pageY,
 		}
-	    keyboardTouchStart(position,this.getElement());
+	    keyboardTouchStart(position,this);
     })
 }
