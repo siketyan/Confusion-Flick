@@ -10,4 +10,5 @@ function registerEvents() {
 		}
 	    keyboardTouchStart(position,this);
     })
+    .on('touchend',keyboardTouchEnd)
 }
