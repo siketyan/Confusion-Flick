@@ -10,6 +10,7 @@ function registerEvents() {
 		}
 	    keyboardTouchStart(position,this);
     })
+    .on('touchend',keyboardTouchEnd)
     
     $(window).on('touchmove',function(event){
 		    var position = {
