@@ -29,6 +29,6 @@ function keyboardSlideDown(column) {
         })
         .css('grid-row-start', function(index, value) {
             const current = parseInt(value);
-            return current === window.config.keyboard.rows ? 1 : current - 1;
+            return current === window.config.keyboard.rows ? 1 : current + 1;
         });
 }
