@@ -11,4 +11,13 @@ function registerEvents() {
 	    keyboardTouchStart(position,this);
     })
     .on('touchend',keyboardTouchEnd)
+    
+    $(window).on('touchmove',function(event){
+		    var position = {
+		    x : event.changedTouches[0].pageX,
+		    y : event.changedTouches[0].pageY,
+		}
+	    keyboardTouchMove(position);
+	})
 }
+	
