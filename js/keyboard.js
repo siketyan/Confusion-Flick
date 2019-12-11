@@ -7,10 +7,6 @@ function keyboardTouchMove(position) {
     window.keyboardTouchMoveAt = position;
 }
 
-function keyboardTouchEnd(){
-    
-}
-
 function keyboardSlideUp(column) {
     $('.keyboard-key')
         .filter(function() {
