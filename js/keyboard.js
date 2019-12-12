@@ -23,16 +23,6 @@ function keyboardSlideRight(row){
 	})
 
 }
-function keyboardSlideLeft(row) {
-    $('.keyboard-key')
-        .filter(function () {
-            return parseInt($(this).css('grid-row-start')) === row;
-        })
-        .css('grid-column-start', function (index, value) {
-            const current = parseInt(value);
-            return current === 1 ? window.config.keyboard.columns : current - 1;
-        });
-}
 function keyboardResolveSlide() {
     var RelativeX = window.keyboardTouchStartedAt.x - window.keyboardTouchMoveAt.x;
     var RelativeY = window.keyboardTouchStartedAt.y - window.keyboardTouchMoveAt.y;
