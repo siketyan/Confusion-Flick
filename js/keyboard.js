@@ -32,24 +32,27 @@ function keyboardResolveSlide() {
     if (window.config.keyboard.threshold > distance || RelativeX === RelativeY) {
         return;
     }
-   var ColRow = parseInt(
+   var Row = parseInt(
             $(window.keyboardTouchStartedOn).css("grid-row-start")
+        );
+	 var Column = parseInt(
+            $(window.keyboardTouchStartedOn).css("grid-column-start")
         );
     //左スライドを呼ぶ
     if (isX && distance > 0) {
-        keyboardSlideLeft(ColRow);
+        keyboardSlideLeft(Row);
     }
     //右スライド
     else if (isX && distance < 0) {
-        keyboardSlideRight(ColRow);
+        keyboardSlideRight(Row);
     }
     //上スライド
     else if (!isX && distance > 0) {
-        keyboardSlideUp(ColRow);
+        keyboardSlideUp(Column);
     }
     //下スライド
     else {
-        keyboardSlideDown(ColRow);
+        keyboardSlideDown(Column);
     }
 }
 function keyboardSlideUp(column) {
