@@ -23,6 +23,7 @@ function keyboardSlideRight(row){
 	})
 
 }
+
 function keyboardResolveSlide() {
     var RelativeX = window.keyboardTouchStartedAt.x - window.keyboardTouchMoveAt.x;
     var RelativeY = window.keyboardTouchStartedAt.y - window.keyboardTouchMoveAt.y;
