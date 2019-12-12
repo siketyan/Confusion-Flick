@@ -45,7 +45,7 @@ function keyboardResolveFlick(){
     if(window.config.keyboard.threshold > distance){
         return 0;
     }
-    //左スライドを呼ぶ
+    //左スライド
     if (isX && distance > 0) {
         return 1;
     }
