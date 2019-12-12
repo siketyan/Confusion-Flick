@@ -56,24 +56,6 @@ function keyboardResolveSlide() {
         ));
     }
 }
-
-
-function keyboardSlideRight(row){
-
-	$('.keyboard-key')
-	.filter(function(){
-
-		return parseInt($(this).css('grid-row-start'))==row;
-
-	})
-
-	.css('grid-column-start',function(index,value){
-		var current = parseInt(value);
-		return current == window.config.keyboard.columns ? 1 : current+1;
-
-	})
-
-}
 function keyboardSlideUp(column) {
     $('.keyboard-key')
         .filter(function() {
