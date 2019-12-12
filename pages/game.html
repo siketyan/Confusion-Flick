@@ -1,34 +1,98 @@
 <section id="display">
 </section>
-<section id="timer">
-    <div class="progress">
-        <div id="timer-progress" class="progress-bar">
+<div class="fixed-bottom">
+    <section id="timer">
+        <div class="progress rounded-0">
+            <div id="timer-progress" class="progress-bar">
+            </div>
         </div>
-    </div>
-</section>
-<section id="keyboard">
-    <table>
-        <tbody>
-            <tr class="keyboard-row">
-                <td class="keyboard-key">あ</td>
-                <td class="keyboard-key">か</td>
-                <td class="keyboard-key">さ</td>
-            </tr>
-            <tr class="keyboard-row">
-                <td class="keyboard-key">た</td>
-                <td class="keyboard-key">な</td>
-                <td class="keyboard-key">は</td>
-            </tr>
-            <tr class="keyboard-row">
-                <td class="keyboard-key">ま</td>
-                <td class="keyboard-key">や</td>
-                <td class="keyboard-key">ら</td>
-            </tr>
-            <tr class="keyboard-row">
-                <td class="keyboard-key">゛</td>
-                <td class="keyboard-key">わ</td>
-                <td class="keyboard-key">、</td>
-            </tr>
-        </tbody>
-    </table>
-</section>
+    </section>
+    <section id="keyboard">
+        <div class="keyboard-wrapper">
+            <div 
+                class="keyboard-key"
+                style="grid-row: 1; grid-column: 1;"
+                data-characters="あ,い,う,え,お"
+            >
+                あ
+            </div>
+            <div
+                class="keyboard-key"
+                style="grid-row: 1; grid-column: 2;"
+                data-characters="か,き,く,け,こ"
+            >
+                か
+            </div>
+            <div
+                class="keyboard-key"
+                style="grid-row: 1; grid-column: 3;"
+                data-characters="さ,し,す,せ,そ"
+            >
+                さ
+            </div>
+            <div
+                class="keyboard-key"
+                style="grid-row: 2; grid-column: 1;"
+                data-characters="た,ち,つ,て,と"
+            >
+                た
+            </div>
+            <div
+                class="keyboard-key"
+                style="grid-row: 2; grid-column: 2;"
+                data-characters="な,に,ぬ,ね,の"
+            >
+                な
+            </div>
+            <div
+                class="keyboard-key"
+                style="grid-row: 2; grid-column: 3;"
+                data-characters="は,ひ,ふ,へ,ほ"
+            >
+                は
+            </div>
+            <div
+                class="keyboard-key"
+                style="grid-row: 3; grid-column: 1;"
+                data-characters="ま,み,む,め,も"
+            >
+                ま
+            </div>
+            <div
+                class="keyboard-key"
+                style="grid-row: 3; grid-column: 2;"
+                data-characters="や,_,ゆ,_,よ"
+            >
+                や
+            </div>
+            <div
+                class="keyboard-key"
+                style="grid-row: 3; grid-column: 3;"
+                data-characters="ら,り,る,れ,ろ"
+            >
+                ら
+            </div>
+            <div
+                class="keyboard-key"
+                style="grid-row: 4; grid-column: 1;"
+                data-characters="^,゛,$,゜,_"
+            >
+                ゛
+            </div>
+            <div
+                class="keyboard-key"
+                style="grid-row: 4; grid-column: 2;"
+                data-characters="わ,を,ん,ー,_"
+            >
+                わ
+            </div>
+            <div
+                class="keyboard-key"
+                style="grid-row: 4; grid-column: 3;"
+                data-characters="、,。,？,！,_"
+            >
+                、
+            </div>
+        </div>
+    </section>
+</div>

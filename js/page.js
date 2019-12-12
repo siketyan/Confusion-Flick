@@ -1,3 +1,6 @@
 function pageLoad(name) {
-    $('#page-container').load('/pages/'+name+'.html');
+    $('#page-container *').off();
+    $('#page-container').load('/pages/'+name+'.html', function() {
+        registerEvents();
+    });
 }
