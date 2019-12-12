@@ -44,25 +44,25 @@ function keyboardResolveSlide() {
     //左スライドを呼ぶ
     if (isX && distance > 0) {
         keyboardSlideLeft(parseInt(
-            $('window.keyboardTouchStartedOn').css('grid-row-start')
+            $(window.keyboardTouchStartedOn).css('grid-row-start')
         ));
     }
     //右スライド
     else if (isX && distance < 0) {
         keyboardSlideRight(parseInt(
-            $('window.keyboardTouchStartedOn').css('grid-row-start')
+            $(window.keyboardTouchStartedOn).css("grid-row-start")
         ));
     }
     //上スライド
     else if (!isX && distance > 0) {
         keyboardSlideUp(parseInt(
-            $('window.keyboardTouchStartedOn').css('grid-column-start')
+            $(window.keyboardTouchStartedOn).css("grid-column-start")
         ));
     }
     //下スライド
     else {
         keyboardSlideDown(parseInt(
-            $('window.keyboardTouchStartedOn').css('grid-column-start')
+            $(window.keyboardTouchStartedOn).css("grid-column-start")
         ));
     }
 }
