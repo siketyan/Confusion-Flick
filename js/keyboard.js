@@ -40,7 +40,7 @@ function keyboardResolveFlick(){
     var isX = Math.abs(RelativeX) > Math.abs(RelativeY) ? true : false;
     var distance = Math.abs(RelativeX) > Math.abs(RelativeY) ? RelativeX : RelativeY;
     if (RelativeX === RelativeY) {
-        return;
+        return -1;
     }
     if(window.config.keyboard.threshold > distance){
         return 0;
