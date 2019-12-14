@@ -4,3 +4,16 @@ function gameSentenceNext(){
 	$("#display").text(window.gameSentenceCurrent);
 	window.gameSentenceCursor=0;
 }
+function gameInputValidate(character){
+	var SentenceCursor=(window.gameSentenceCurrent).charAt(window.gameSentenceCursor)
+	if(SentenceCursor==character){
+		window.gameSentenceCursor+=1;
+		if(window.gameSentenceCursor>window.gameSentenceCurrent){
+			gameSentenceNext();
+		}else{
+			var display_text = $("#display").text();
+			display_text = display_text.slice(1);
+			$("#display").text(display_text);
+		}
+	}
+}
