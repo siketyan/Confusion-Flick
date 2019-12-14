@@ -1,9 +1,9 @@
 function keyboardTouchStart(position, element) {
-    window.keyboardTouchStartedAt=position;
-    window.keyboardTouchStartedOn=element;
+    window.keyboardTouchStartedAt = position;
+    window.keyboardTouchStartedOn = element;
 }
 
-function keyboardTouchEnd(){
+function keyboardTouchEnd() {
     const direction = keyboardResolveFlick();
 
     keyboardResolveInput(direction);
@@ -13,44 +13,45 @@ function keyboardTouchEnd(){
     delete window.keyboardTouchStartedOn;
     delete window.keyboardTouchMoveAt;
 }
+
 function keyboardTouchMove(position) {
     window.keyboardTouchMoveAt = position;
 }
 
-function keyboardSlideLeft(row){
-     $('.keyboard-key')
-     .filter(function() {
-         return parseInt($(this).css('grid-row-start')) === row;
-     })
-     .css('grid-column-start', function(index, value) {
-          const current = parseInt(value);
-          return current === 1 ? window.config.keyboard.columns : current - 1;
-      });
+function keyboardSlideLeft(row) {
+    $('.keyboard-key')
+        .filter(function () {
+            return parseInt($(this).css('grid-row-start')) === row;
+        })
+        .css('grid-column-start', function (index, value) {
+            const current = parseInt(value);
+            return current === 1 ? window.config.keyboard.columns : current - 1;
+        });
 }
 
-function keyboardSlideRight(row){
+function keyboardSlideRight(row) {
 
-	$('.keyboard-key')
-	.filter(function(){
+    $('.keyboard-key')
+        .filter(function () {
 
-		return parseInt($(this).css('grid-row-start'))==row;
+            return parseInt($(this).css('grid-row-start')) === row;
 
-	})
+        })
 
-	.css('grid-column-start',function(index,value){
-		var current = parseInt(value);
-		return current == window.config.keyboard.columns ? 1 : current+1;
+        .css('grid-column-start', function (index, value) {
+            const current = parseInt(value);
+            return current === window.config.keyboard.columns ? 1 : current + 1;
 
-	})
+        })
 
 }
 
 function keyboardSlideUp(column) {
     $('.keyboard-key')
-        .filter(function() {
+        .filter(function () {
             return parseInt($(this).css('grid-column-start')) === column;
         })
-        .css('grid-row-start', function(index, value) {
+        .css('grid-row-start', function (index, value) {
             const current = parseInt(value);
             return current === 1 ? window.config.keyboard.rows : current - 1;
         });
@@ -58,10 +59,10 @@ function keyboardSlideUp(column) {
 
 function keyboardSlideDown(column) {
     $('.keyboard-key')
-        .filter(function() {
+        .filter(function () {
             return parseInt($(this).css('grid-column-start')) === column;
         })
-        .css('grid-row-start', function(index, value) {
+        .css('grid-row-start', function (index, value) {
             const current = parseInt(value);
             return current === window.config.keyboard.rows ? 1 : current + 1;
         });
@@ -96,16 +97,16 @@ function keyboardSlide(direction) {
     }
 }
 
-function keyboardResolveFlick(){
+function keyboardResolveFlick() {
     if (!window.keyboardTouchMoveAt) {
         window.keyboardTouchMoveAt = window.keyboardTouchStartedAt;
     }
 
-    var RelativeX = window.keyboardTouchStartedAt.x - window.keyboardTouchMoveAt.x;
-    var RelativeY = window.keyboardTouchStartedAt.y - window.keyboardTouchMoveAt.y;
-    var isX = Math.abs(RelativeX) > Math.abs(RelativeY) ? true : false;
-    var distance = Math.abs(RelativeX) > Math.abs(RelativeY) ? RelativeX : RelativeY;
-    if(window.config.keyboard.threshold > Math.abs(distance)){
+    const RelativeX = window.keyboardTouchStartedAt.x - window.keyboardTouchMoveAt.x;
+    const RelativeY = window.keyboardTouchStartedAt.y - window.keyboardTouchMoveAt.y;
+    const isX = Math.abs(RelativeX) > Math.abs(RelativeY);
+    const distance = Math.abs(RelativeX) > Math.abs(RelativeY) ? RelativeX : RelativeY;
+    if (window.config.keyboard.threshold > Math.abs(distance)) {
         return 0;
     }
     if (RelativeX === RelativeY) {
@@ -128,7 +129,8 @@ function keyboardResolveFlick(){
         return 4;
     }
 }
-function keyboardResolveInput(direction){
-    var Characters = $(window.keyboardTouchStartedOn).data('characters').split(',');
+
+function keyboardResolveInput(direction) {
+    const Characters = $(window.keyboardTouchStartedOn).data('characters').split(',');
     gameInputValidate(Characters[direction]);
 }
