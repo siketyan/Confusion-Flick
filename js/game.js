@@ -33,5 +33,6 @@ function gameInputValidate(character) {
 }
 
 function gameFinish() {
+    timerStop();
     pageLoad('result', resultShow);
 }
