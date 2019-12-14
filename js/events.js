@@ -7,7 +7,7 @@ function registerEvents() {
     })
 
     $(".keyboard-key").on('touchstart', function (event) {
-        var position = {
+        const position = {
             x: event.changedTouches[0].pageX,
             y: event.changedTouches[0].pageY,
         }
@@ -16,7 +16,7 @@ function registerEvents() {
         .on('touchend', keyboardTouchEnd)
 
     $(window).on('touchmove', function (event) {
-        var position = {
+        const position = {
             x: event.changedTouches[0].pageX,
             y: event.changedTouches[0].pageY,
         }

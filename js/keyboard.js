@@ -39,7 +39,7 @@ function keyboardSlideRight(row) {
         })
 
         .css('grid-column-start', function (index, value) {
-            var current = parseInt(value);
+            const current = parseInt(value);
             return current == window.config.keyboard.columns ? 1 : current + 1;
 
         })
@@ -102,10 +102,10 @@ function keyboardResolveFlick() {
         window.keyboardTouchMoveAt = window.keyboardTouchStartedAt;
     }
 
-    var RelativeX = window.keyboardTouchStartedAt.x - window.keyboardTouchMoveAt.x;
-    var RelativeY = window.keyboardTouchStartedAt.y - window.keyboardTouchMoveAt.y;
-    var isX = Math.abs(RelativeX) > Math.abs(RelativeY) ? true : false;
-    var distance = Math.abs(RelativeX) > Math.abs(RelativeY) ? RelativeX : RelativeY;
+    const RelativeX = window.keyboardTouchStartedAt.x - window.keyboardTouchMoveAt.x;
+    const RelativeY = window.keyboardTouchStartedAt.y - window.keyboardTouchMoveAt.y;
+    const isX = Math.abs(RelativeX) > Math.abs(RelativeY) ? true : false;
+    const distance = Math.abs(RelativeX) > Math.abs(RelativeY) ? RelativeX : RelativeY;
     if (window.config.keyboard.threshold > Math.abs(distance)) {
         return 0;
     }
@@ -131,6 +131,6 @@ function keyboardResolveFlick() {
 }
 
 function keyboardResolveInput(direction) {
-    var Characters = $(window.keyboardTouchStartedOn).data('characters').split(',');
+    const Characters = $(window.keyboardTouchStartedOn).data('characters').split(',');
     gameInputValidate(Characters[direction]);
 }
