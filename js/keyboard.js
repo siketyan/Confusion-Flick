@@ -6,7 +6,7 @@ function keyboardTouchStart(position, element) {
 function keyboardTouchEnd(){
     const direction = keyboardResolveFlick();
 
-    keyboardResolveInput();
+    keyboardResolveInput(direction);
     keyboardSlide(direction);
 
     delete window.keyboardTouchStartedAt;
@@ -97,15 +97,19 @@ function keyboardSlide(direction) {
 }
 
 function keyboardResolveFlick(){
+    if (!window.keyboardTouchMoveAt) {
+        window.keyboardTouchMoveAt = window.keyboardTouchStartedAt;
+    }
+
     var RelativeX = window.keyboardTouchStartedAt.x - window.keyboardTouchMoveAt.x;
     var RelativeY = window.keyboardTouchStartedAt.y - window.keyboardTouchMoveAt.y;
     var isX = Math.abs(RelativeX) > Math.abs(RelativeY) ? true : false;
     var distance = Math.abs(RelativeX) > Math.abs(RelativeY) ? RelativeX : RelativeY;
-    if (RelativeX === RelativeY) {
-        return -1;
-    }
     if(window.config.keyboard.threshold > Math.abs(distance)){
         return 0;
+    }
+    if (RelativeX === RelativeY) {
+        return -1;
     }
     //左スライド
     if (isX && distance > 0) {
@@ -124,8 +128,7 @@ function keyboardResolveFlick(){
         return 4;
     }
 }
-function keyboardResolveInput(){
-    var direction = keyboardResolveFlick();
+function keyboardResolveInput(direction){
     var Characters = $(window.keyboardTouchStartedOn).data('characters').split(',');
     gameInputValidate(Characters[direction]);
 }
