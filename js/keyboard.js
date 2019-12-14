@@ -97,11 +97,11 @@ function keyboardResolveFlick(){
     var RelativeY = window.keyboardTouchStartedAt.y - window.keyboardTouchMoveAt.y;
     var isX = Math.abs(RelativeX) > Math.abs(RelativeY) ? true : false;
     var distance = Math.abs(RelativeX) > Math.abs(RelativeY) ? RelativeX : RelativeY;
-    if (RelativeX === RelativeY) {
-        return -1;
-    }
     if(window.config.keyboard.threshold > Math.abs(distance)){
         return 0;
+    }
+    if (RelativeX === RelativeY) {
+        return -1;
     }
     //左スライド
     if (isX && distance > 0) {
