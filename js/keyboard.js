@@ -11,7 +11,7 @@ function keyboardTouchEnd(){
 }
 function keyboardTouchMove(position) {
     window.keyboardTouchMoveAt = position;
-} 
+}
 
 function keyboardSlideLeft(row){
      $('.keyboard-key')
@@ -46,7 +46,7 @@ function keyboardResolveSlide() {
     var RelativeY = window.keyboardTouchStartedAt.y - window.keyboardTouchMoveAt.y;
     var isX = Math.abs(RelativeX) > Math.abs(RelativeY) ? true : false;
     var distance = Math.abs(RelativeX) > Math.abs(RelativeY) ? RelativeX : RelativeY;
-    if (window.config.keyboard.threshold > distance || RelativeX === RelativeY) {
+    if (window.config.keyboard.threshold > Math.abs(distance) || RelativeX === RelativeY) {
         return;
     }
    var Row = parseInt(
