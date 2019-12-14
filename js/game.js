@@ -31,3 +31,7 @@ function gameInputValidate(character) {
         window.gameMissCount++;
     }
 }
+
+function gameFinish() {
+    pageLoad('result', resultShow);
+}
