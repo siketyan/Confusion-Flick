@@ -24,3 +24,8 @@
 	border-top-width: 3px;
 	border-bottom-width: 1px;
 }
+
+.keyboard-key-special {
+	padding-left: .9rem;
+	padding-right: .3rem;
+}
