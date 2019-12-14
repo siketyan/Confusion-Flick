@@ -104,7 +104,7 @@ function keyboardResolveFlick() {
 
     const RelativeX = window.keyboardTouchStartedAt.x - window.keyboardTouchMoveAt.x;
     const RelativeY = window.keyboardTouchStartedAt.y - window.keyboardTouchMoveAt.y;
-    const isX = Math.abs(RelativeX) > Math.abs(RelativeY) ? true : false;
+    const isX = Math.abs(RelativeX) > Math.abs(RelativeY);
     const distance = Math.abs(RelativeX) > Math.abs(RelativeY) ? RelativeX : RelativeY;
     if (window.config.keyboard.threshold > Math.abs(distance)) {
         return 0;
