@@ -1,6 +1,8 @@
 function keyboardTouchStart(position, element) {
     window.keyboardTouchStartedAt = position;
     window.keyboardTouchStartedOn = element;
+
+    $(element).addClass('keyboard-key-touching');
 }
 
 function keyboardTouchEnd() {
@@ -8,6 +10,8 @@ function keyboardTouchEnd() {
 
     keyboardResolveInput(direction);
     keyboardSlide(direction);
+
+    $('.keyboard-key-touching').removeClass('keyboard-key-touching');
 
     delete window.keyboardTouchStartedAt;
     delete window.keyboardTouchStartedOn;
