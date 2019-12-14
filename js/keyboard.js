@@ -4,7 +4,11 @@ function keyboardTouchStart(position, element) {
 }
 
 function keyboardTouchEnd(){
-    keyboardResolveSlide();
+    const direction = keyboardResolveFlick();
+
+    keyboardResolveInput();
+    keyboardSlide(direction);
+
     delete window.keyboardTouchStartedAt;
     delete window.keyboardTouchStartedOn;
     delete window.keyboardTouchMoveAt;
@@ -41,37 +45,6 @@ function keyboardSlideRight(row){
 
 }
 
-function keyboardResolveSlide() {
-    var RelativeX = window.keyboardTouchStartedAt.x - window.keyboardTouchMoveAt.x;
-    var RelativeY = window.keyboardTouchStartedAt.y - window.keyboardTouchMoveAt.y;
-    var isX = Math.abs(RelativeX) > Math.abs(RelativeY) ? true : false;
-    var distance = Math.abs(RelativeX) > Math.abs(RelativeY) ? RelativeX : RelativeY;
-    if (window.config.keyboard.threshold > Math.abs(distance) || RelativeX === RelativeY) {
-        return;
-    }
-   var Row = parseInt(
-            $(window.keyboardTouchStartedOn).css("grid-row-start")
-        );
-	 var Column = parseInt(
-            $(window.keyboardTouchStartedOn).css("grid-column-start")
-        );
-    //左スライドを呼ぶ
-    if (isX && distance > 0) {
-        keyboardSlideLeft(Row);
-    }
-    //右スライド
-    else if (isX && distance < 0) {
-        keyboardSlideRight(Row);
-    }
-    //上スライド
-    else if (!isX && distance > 0) {
-        keyboardSlideUp(Column);
-    }
-    //下スライド
-    else {
-        keyboardSlideDown(Column);
-    }
-}
 function keyboardSlideUp(column) {
     $('.keyboard-key')
         .filter(function() {
@@ -92,6 +65,31 @@ function keyboardSlideDown(column) {
             const current = parseInt(value);
             return current === window.config.keyboard.rows ? 1 : current + 1;
         });
+}
+
+function keyboardSlide(direction) {
+    switch (direction) {
+        default:
+        case -1:
+        case 0:
+            return;
+
+        case 1:
+            keyboardSlideLeft();
+            break;
+
+        case 2:
+            keyboardSlideUp();
+            break;
+
+        case 3:
+            keyboardSlideRight();
+            break;
+
+        case 4:
+            keyboardSlideDown();
+            break;
+    }
 }
 
 function keyboardResolveFlick(){
