@@ -93,6 +93,10 @@ function keyboardSlide(direction) {
 }
 
 function keyboardResolveFlick(){
+    if (!window.keyboardTouchMoveAt) {
+        window.keyboardTouchMoveAt = window.keyboardTouchStartedAt;
+    }
+
     var RelativeX = window.keyboardTouchStartedAt.x - window.keyboardTouchMoveAt.x;
     var RelativeY = window.keyboardTouchStartedAt.y - window.keyboardTouchMoveAt.y;
     var isX = Math.abs(RelativeX) > Math.abs(RelativeY) ? true : false;
