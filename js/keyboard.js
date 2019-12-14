@@ -116,3 +116,8 @@ function keyboardResolveFlick(){
         return 4;
     }
 }
+function keyboardResolveInput(){
+    var direction = keyboardResolveFlick();
+    var Characters = $(window.keyboardTouchStartedOn).data('characters').split(',');
+    gameInputValidate(Characters[direction]);
+}
