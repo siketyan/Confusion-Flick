@@ -6,7 +6,7 @@ function keyboardTouchStart(position, element) {
 function keyboardTouchEnd(){
     const direction = keyboardResolveFlick();
 
-    keyboardResolveInput();
+    keyboardResolveInput(direction);
     keyboardSlide(direction);
 
     delete window.keyboardTouchStartedAt;
@@ -124,8 +124,7 @@ function keyboardResolveFlick(){
         return 4;
     }
 }
-function keyboardResolveInput(){
-    var direction = keyboardResolveFlick();
+function keyboardResolveInput(direction){
     var Characters = $(window.keyboardTouchStartedOn).data('characters').split(',');
     gameInputValidate(Characters[direction]);
 }
