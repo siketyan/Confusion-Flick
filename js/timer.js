@@ -5,14 +5,17 @@ function timerStart(interval) {
 
 function timerProgress(estimated, limit) {
     //perはパーセント
-    const per = (limit - estimated) / limit * 100;
+    const remaining = limit - estimated;
+    const per = remaining / limit * 100;
 
     if (per <= 0) {
         gameFinish();
         return;
     }
 
-    $('#timer-progress').css('width', per.toString() + '%');
+    $('#timer-progress')
+        .css('width', per.toString() + '%')
+        .text(Math.floor(remaining / 1000));
 }
 
 function timerTick() {
