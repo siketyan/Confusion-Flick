@@ -1,6 +1,6 @@
 function timerStart(interval){
-	window.timerStartedAt = new Date();
-	setInterval(timerTick,interval);
+    window.timerStartedAt = new Date();
+    setInterval(timerTick,interval);
 }
 
 function timerProgress(estimated, limit) {
