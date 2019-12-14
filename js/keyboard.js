@@ -118,6 +118,6 @@ function keyboardResolveFlick(){
 }
 function keyboardResolveInput(){
     var direction = keyboardResolveFlick();
-    var InputCharacters = $(window.keyboardTouchStartedOn).data('characters').split(',');
-    gameInputValidate(InputCharacters[direction]);
+    var Characters = $(window.keyboardTouchStartedOn).data('characters').split(',');
+    gameInputValidate(Characters[direction]);
 }
