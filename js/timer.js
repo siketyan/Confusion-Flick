@@ -6,6 +6,12 @@ function timerStart(interval){
 function timerProgress(estimated, limit) {
     //perはパーセント
     per = (limit - estimated) / limit * 100;
+
+    if (per <= 0) {
+        pageLoad('result');
+        return;
+    }
+
     $('#timer-progress').css('width', per.toString() + '%');
 }
 

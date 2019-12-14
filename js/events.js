@@ -1,6 +1,9 @@
 function registerEvents() {
 	$(".page-move").click(function () {
-		pageLoad($(this).data('page'));
+		const page = $(this).data('page');
+		const callback = page === 'game' ? gameStart : null;
+
+		pageLoad(page, callback);
     })
 
     $(".keyboard-key").on('touchstart',function(event){
@@ -11,7 +14,7 @@ function registerEvents() {
 	    keyboardTouchStart(position,this);
     })
     .on('touchend',keyboardTouchEnd)
-    
+
     $(window).on('touchmove',function(event){
 		    var position = {
 		    x : event.changedTouches[0].pageX,
@@ -20,4 +23,3 @@ function registerEvents() {
 	    keyboardTouchMove(position);
 	})
 }
-	

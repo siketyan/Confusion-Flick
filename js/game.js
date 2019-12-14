@@ -1,3 +1,8 @@
+function gameStart() {
+	timerStart(window.config.timer.interval);
+	gameSentenceNext();
+}
+
 function gameSentenceNext(){
 	var arrayIndex =Math.floor(Math.random()*(window.config.game.sentences).length)
 	window.gameSentenceCurrent=window.config.game.sentences[arrayIndex];
@@ -8,7 +13,7 @@ function gameInputValidate(character){
 	var SentenceCursor=(window.gameSentenceCurrent).charAt(window.gameSentenceCursor)
 	if(SentenceCursor==character){
 		window.gameSentenceCursor+=1;
-		if(window.gameSentenceCursor>window.gameSentenceCurrent){
+		if(window.gameSentenceCursor>=window.gameSentenceCurrent){
 			gameSentenceNext();
 		}else{
 			var display_text = $("#display").text();
