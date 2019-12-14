@@ -100,7 +100,7 @@ function keyboardResolveFlick(){
     if (RelativeX === RelativeY) {
         return -1;
     }
-    if(window.config.keyboard.threshold > distance){
+    if(window.config.keyboard.threshold > Math.abs(distance)){
         return 0;
     }
     //左スライド
