@@ -9,7 +9,7 @@ window.config = {
         interval: 100,
     },
     game: {
-        sentences:[
+        sentences: [
             'とよたこうせん',
             'きかいこうか゛くか',
             'て゛んきて゛んししすてむ',

@@ -1,6 +1,6 @@
-function timerStart(interval){
+function timerStart(interval) {
     window.timerStartedAt = new Date();
-    setInterval(timerTick,interval);
+    setInterval(timerTick, interval);
 }
 
 function timerProgress(estimated, limit) {
@@ -16,7 +16,7 @@ function timerProgress(estimated, limit) {
 }
 
 function timerTick() {
-  var d1 = new Date();
-  var diffTime = d1.getTime() - window.timerStartedAt.getTime();
-  timerProgress(diffTime,window.config.timer.limit);
+    var d1 = new Date();
+    var diffTime = d1.getTime() - window.timerStartedAt.getTime();
+    timerProgress(diffTime, window.config.timer.limit);
 }
