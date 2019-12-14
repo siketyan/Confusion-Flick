@@ -5,6 +5,7 @@ function gameStart() {
 
     timerStart(window.config.timer.interval);
     gameSentenceNext();
+    gameUpdateStatus();
 }
 
 function gameSentenceNext() {
@@ -30,9 +31,16 @@ function gameInputValidate(character) {
     } else {
         window.gameMissCount++;
     }
+
+    gameUpdateStatus();
 }
 
 function gameFinish() {
     timerStop();
     pageLoad('result', resultShow);
+}
+
+function gameUpdateStatus() {
+    $('#game-sentence-current').text(window.gameSentenceCount + 1);
+    $('#game-miss-current').text(window.gameMissCount);
 }
