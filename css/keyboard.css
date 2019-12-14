@@ -18,6 +18,9 @@
 	padding: 10px;
 	text-align: center;
 	user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
 }
 
 .keyboard-key-touching {
