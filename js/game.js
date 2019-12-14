@@ -10,13 +10,23 @@ function gameStart() {
 
 function gameSentenceNext() {
     const arrayIndex = Math.floor(Math.random() * (window.config.game.sentences).length);
+    const $display = $('#display');
+
     window.gameSentenceCurrent = window.config.game.sentences[arrayIndex];
-    $("#display").text(window.gameSentenceCurrent);
     window.gameSentenceCursor = 0;
+
+    $display.empty();
+    window.gameSentenceCurrent.split('').forEach(function (character) {
+        $display.append(
+            $('<span>').text(character)
+        );
+    });
 }
 
 function gameInputValidate(character) {
     const SentenceCursor = (window.gameSentenceCurrent).charAt(window.gameSentenceCursor);
+    const $displaySpan = $('#display > span');
+
     if (SentenceCursor === character) {
         window.gameSentenceCursor += 1;
         window.gameCharacterCount++;
@@ -24,12 +34,16 @@ function gameInputValidate(character) {
             window.gameSentenceCount++;
             gameSentenceNext();
         } else {
-            const $display = $('#display');
-            const display_text = $display.text().slice(1);
-            $display.text(display_text);
+            $displaySpan
+                .eq(window.gameSentenceCursor - 1)
+                .attr('class', 'text-success');
         }
     } else {
         window.gameMissCount++;
+
+        $displaySpan
+            .eq(window.gameSentenceCursor)
+            .attr('class', 'text-danger');
     }
 
     gameUpdateStatus();
