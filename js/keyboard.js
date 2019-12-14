@@ -2,6 +2,7 @@ function keyboardTouchStart(position, element) {
     window.keyboardTouchStartedAt=position;
     window.keyboardTouchStartedOn=element;
 }
+
 function keyboardTouchEnd(){
     keyboardResolveSlide();
     delete window.keyboardTouchStartedAt;
