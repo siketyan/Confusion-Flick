@@ -21,5 +21,9 @@ function registerEvents() {
             y: event.changedTouches[0].pageY,
         };
         keyboardTouchMove(position);
-    })
+    });
+
+    $('#result-tweet').click(function () {
+        resultTweet();
+    });
 }

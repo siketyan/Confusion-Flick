@@ -8,7 +8,7 @@ function timerProgress(estimated, limit) {
     const per = (limit - estimated) / limit * 100;
 
     if (per <= 0) {
-        pageLoad('result');
+        gameFinish();
         return;
     }
 

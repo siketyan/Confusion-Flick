@@ -1,3 +1,27 @@
-<section id="result">
-    <h1>結果発表</h1>
+<section id="result" class="px-4 py-5">
+    <h1 class="pb-2">Result</h1>
+    <div class="card">
+        <div class="card-body">
+            <table class="table mb-0">
+                <tbody>
+                    <tr>
+                        <td>打てた問題数</td>
+                        <td id="result-sentences" class="font-weight-bold"></td>
+                    </tr>
+                    <tr>
+                        <td>打てた文字数</td>
+                        <td id="result-characters" class="font-weight-bold"></td>
+                    </tr>
+                    <tr>
+                        <td>間違えた数</td>
+                        <td id="result-misses" class="font-weight-bold"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <p class="text-center pt-3">
+        <button id="result-tweet" class="btn btn-info">ツイート</button>
+        <button class="btn btn-primary page-move" data-page="default">戻る</button>
+    </p>
 </section>
