@@ -13,7 +13,7 @@ function gameInputValidate(character){
 	var SentenceCursor=(window.gameSentenceCurrent).charAt(window.gameSentenceCursor)
 	if(SentenceCursor==character){
 		window.gameSentenceCursor+=1;
-		if(window.gameSentenceCursor>=window.gameSentenceCurrent){
+		if(window.gameSentenceCursor>=window.gameSentenceCurrent.length){
 			gameSentenceNext();
 		}else{
 			var display_text = $("#display").text();
