@@ -6,6 +6,7 @@ window.config = {
     },
     timer: {
         limit: 60000,
+        interval: 100,
     },
     game: {
         sentences:[
