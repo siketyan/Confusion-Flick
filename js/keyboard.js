@@ -68,6 +68,10 @@ function keyboardSlideDown(column) {
 }
 
 function keyboardSlide(direction) {
+    const $element = $(window.keyboardTouchStartedOn);
+    const row = parseInt($element.css('grid-row-start'));
+    const column = parseInt($element.css('grid-column-start'));
+
     switch (direction) {
         default:
         case -1:
@@ -75,19 +79,19 @@ function keyboardSlide(direction) {
             return;
 
         case 1:
-            keyboardSlideLeft();
+            keyboardSlideLeft(row);
             break;
 
         case 2:
-            keyboardSlideUp();
+            keyboardSlideUp(column);
             break;
 
         case 3:
-            keyboardSlideRight();
+            keyboardSlideRight(row);
             break;
 
         case 4:
-            keyboardSlideDown();
+            keyboardSlideDown(column);
             break;
     }
 }
