@@ -18,3 +18,9 @@
 	padding: 10px;
 	text-align: center;
 }
+
+.keyboard-key-touching {
+	background-color: #bbb;
+	border-top-width: 3px;
+	border-bottom-width: 1px;
+}
