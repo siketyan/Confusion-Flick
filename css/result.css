@@ -1,3 +1,8 @@
 .table > tbody > tr:first-child > td {
     border: none;
 }
+
+.btn-twitter {
+    background-color: #39f;
+    color: #fff;
+}
