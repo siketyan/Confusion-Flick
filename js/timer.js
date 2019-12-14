@@ -7,15 +7,22 @@ function timerProgress(estimated, limit) {
     //perはパーセント
     const remaining = limit - estimated;
     const per = remaining / limit * 100;
+    const $progress = $('#timer-progress');
 
     if (per <= 0) {
         gameFinish();
         return;
     }
 
-    $('#timer-progress')
+    $progress
         .css('width', per.toString() + '%')
         .text(Math.floor(remaining / 1000));
+
+    if (remaining <= 10000) {
+        $progress.addClass('bg-danger');
+    } else if (remaining <= 20000) {
+        $progress.addClass('bg-warning');
+    }
 }
 
 function timerTick() {
