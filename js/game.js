@@ -5,13 +5,15 @@ function gameSentenceNext(){
 	window.gameSentenceCursor=0;
 }
 function gameInputValidate(character){
-	A=(window.gameSentenceCurrent).charAt(window.gameSentenceCursor)
-	if(A==character){
+	var SetenceCursor=(window.gameSentenceCurrent).charAt(window.gameSentenceCursor)
+	if(SetenceCursor==character){
 		window.gameSentenceCursor+=1;
 		if(window.gameSentenceCursor>window.gameSentenceCurrent){
 			gameSentenceNext();
 		}else{
-			$("#display").text
+			var display_text = $("#display").text();
+			var display_text = display_text.slice(1);
+			$("#display").text(display_text);
 		}
 	}
 }
