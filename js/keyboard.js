@@ -34,13 +34,13 @@ function keyboardSlideRight(row) {
     $('.keyboard-key')
         .filter(function () {
 
-            return parseInt($(this).css('grid-row-start')) == row;
+            return parseInt($(this).css('grid-row-start')) === row;
 
         })
 
         .css('grid-column-start', function (index, value) {
             const current = parseInt(value);
-            return current == window.config.keyboard.columns ? 1 : current + 1;
+            return current === window.config.keyboard.columns ? 1 : current + 1;
 
         })
 

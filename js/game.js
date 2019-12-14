@@ -12,7 +12,7 @@ function gameSentenceNext() {
 
 function gameInputValidate(character) {
     const SentenceCursor = (window.gameSentenceCurrent).charAt(window.gameSentenceCursor)
-    if (SentenceCursor == character) {
+    if (SentenceCursor === character) {
         window.gameSentenceCursor += 1;
         if (window.gameSentenceCursor >= window.gameSentenceCurrent.length) {
             gameSentenceNext();
