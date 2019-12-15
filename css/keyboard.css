@@ -15,7 +15,8 @@
 	border: 1px solid #ccc;
 	border-bottom-width: 3px;
 	border-radius: 5px;
-	padding: 10px;
+	font-size: 1.3rem;
+	padding: 7px 5px;
 	text-align: center;
 	user-select: none;
 	-moz-user-select: none;
@@ -30,6 +31,7 @@
 }
 
 .keyboard-key-special {
-	padding-left: .9rem;
+	letter-spacing: -.5rem;
+	padding-left: .5rem;
 	padding-right: .3rem;
 }
