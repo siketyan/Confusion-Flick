@@ -9,7 +9,10 @@ function keyboardTouchEnd() {
     const direction = keyboardResolveFlick();
 
     keyboardResolveInput(direction);
-    keyboardSlide(direction);
+
+    if (!window.gameDontMove) {
+        keyboardSlide(direction);
+    }
 
     $('.keyboard-key-touching').removeClass('keyboard-key-touching');
 
