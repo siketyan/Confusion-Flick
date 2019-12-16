@@ -26,4 +26,8 @@ function registerEvents() {
     $('#result-tweet').click(function () {
         resultTweet();
     });
+
+    $('#dont-move').change(function () {
+        window.gameDontMove = this.checked;
+    });
 }
